@@ -56,6 +56,6 @@ export n_partitions
 mkshelf=`echo $0 | sed 's!mkdevs!mkshelf!'`
 i=0
 while test $i -lt $n_shelves; do
-	sh $mkshelf $dir $i
+	$mkshelf $dir $i
 	i=`expr $i + 1`
 done
