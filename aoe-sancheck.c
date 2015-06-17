@@ -274,7 +274,6 @@ jinput(Eth *e)
 {
 	Aoe *a;
 	Qc *q;
-	Ata *aa;
 	Lun *lun;
 	ulong tag;
 	int n;
@@ -297,7 +296,6 @@ jinput(Eth *e)
 		}
 		return 0;
 	case Cata:
-		aa = (Ata *) a;
 		lun = findlun(e, a);
 		if (lun == nil)
 			return 0;
