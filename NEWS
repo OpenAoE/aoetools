@@ -1,3 +1,7 @@
+2015-06-16 Ed Cashin <ed.cashin@acm.org>
+	update documentation for OpenAoE
+	clean up code based on set-not-used compiler warnings
+
 2013-08-07 Ed Cashin <ecashin@coraid.com>
 	support debugfs-exported debug info in sos-linux
 	release 36

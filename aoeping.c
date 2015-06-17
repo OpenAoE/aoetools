@@ -1,5 +1,5 @@
 /* aoeping.c - userland aoe pinger
- * Copyright 2009, CORAID, Inc., and licensed under GPL v.2.
+ * Copyright 2015, Ed Cashin
  *
  * run without arguments for usage
  */

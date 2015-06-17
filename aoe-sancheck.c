@@ -1,4 +1,4 @@
-/* Copyright Coraid, Inc. 2010.  All Rights Reserved. */
+/* Copyright Ed Cashin, 2015 */
 
 #include <stdio.h>
 #include <sched.h>
