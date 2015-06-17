@@ -609,12 +609,11 @@ sancheck(int maj, int min)
 	Mac *ml, *m;
 	int a, found;
 	int ps, nsect, nea, nloc;
-	int mtu, mtuflag;
+	int mtu;
 	char buf[128];
 	char mac[13];
 
 	nsect = mtu = 0;
-	mtuflag = 0;
 	nloc = nea = 0;
 	a = 0;
 	ps = 0;
@@ -629,10 +628,9 @@ sancheck(int maj, int min)
 			found = 1;
 			if (mtu == 0)
 				mtu = e->mtu;
-			else if (mtu != e->mtu) {
-				mtuflag = 1;
+			else if (mtu != e->mtu)
 				mtu = (e->mtu > mtu ? e->mtu : mtu);
-			}
+
 			insertmac(&ml, l->ea);
 			if (ps == 0)
 				ps = l->maxsect;
