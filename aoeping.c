@@ -359,6 +359,9 @@ smart(Conf *c, u32 tag, char *smart_cmd)
 	}
 	n = aoe_pkt_read(buf, sizeof buf, c, tag);
 	p = (Ata *) buf;
+	/* We're expecting the AoE and ATA header plus 512 bytes of SMART */
+	if (n < 512 + (&p->data[0] - (uchar *) p))
+		exit(EXIT_FAILURE);
 	if (show_smart_regs(p) != 0)
 		exit(EXIT_FAILURE);
 	if (s->data & SmartDataRet) {
