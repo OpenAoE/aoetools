@@ -48,11 +48,11 @@ These two are legacy commands for systems without udev.
 --------------------------------------------------------------------
 RESOURCES
 
+The aoetools on github
+  https://github.com/OpenAoE/aoetools
+
 The aoetools homepage
   http://aoetools.sourceforge.net/
 
-The CORAID homepage
-  http://www.coraid.com/
-
-The Linux Support Page at CORAID
-  http://support.coraid.com/support/linux/
+OpenAoE
+  http://www.openaoe.org/
