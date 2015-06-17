@@ -1,8 +1,8 @@
 #! /bin/sh
 # aoe-version - display versions of AoE-related software
-# Copyright 2013, CORAID, Inc., and licensed under GPL v.2.
+# Copyright 2015, Ed Cashin
 
-aoetools=36
+aoetools=37
 
 # modinfo doesn't always work correctly when there is a file
 # in the current working directory called "aoe", but it's
