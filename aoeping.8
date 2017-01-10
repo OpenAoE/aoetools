@@ -67,9 +67,9 @@ argument is the name of a SMART command to send to the disk.  The
 SMART commands in the list below are supported.  If the command
 requires data 
 transfer, one sector (512 bytes) of data is always the amount
-transfered.  If the command takes a parameter (for the Low LBA
+transferred.  If the command takes a parameter (for the Low LBA
 register), then the name of the SMART command is immediately followed
-by a colon and then a number, the value of the parameter, e.g., "-S
+by a colon and then a number, the value of the parameter, e.g., "\-S
 read_log:1".
 .IP
   read_data
@@ -119,7 +119,7 @@ network interface eth0.
 .IP
 .EX
 .nf
-bash# aoeping -v 10 9 eth0 | head
+bash# aoeping \-v 10 9 eth0 | head
 tag: 80000000
 eth: eth0
 shelf: 10
@@ -139,7 +139,7 @@ timeout.
 .IP
 .EX
 .nf
-bash# aoeping -i -s 20 \\
+bash# aoeping \-i \-s 20 \\
   10 9 eth0 > /dev/null \\
   && echo ok
 ok
@@ -154,7 +154,7 @@ threshold.
 .IP
 .EX
 .nf
-bash# aoeping -S return_status \\
+bash# aoeping \-S return_status \\
   10 9 eth0 | grep 'LBA Mid: 0x4f' \\
   > /dev/null \\
   && echo ok

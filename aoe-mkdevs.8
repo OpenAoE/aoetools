@@ -52,13 +52,13 @@ sysadmin gets rid of the mismatching device nodes and calls
 .IP
 .EX
 .nf
-nai:~# rm -rf /dev/etherd 
+nai:~# rm \-rf /dev/etherd
 nai:~# aoe-mkdevs /dev/etherd
-nai:~# ls /dev/etherd | wc -l
+nai:~# ls /dev/etherd | wc \-l
 1603
-nai:~# rm -rf /dev/etherd
+nai:~# rm \-rf /dev/etherd
 nai:~# n_partitions=1 aoe-mkdevs /dev/etherd
-nai:~# ls /dev/etherd | wc -l
+nai:~# ls /dev/etherd | wc \-l
 103
 .fi
 .EE

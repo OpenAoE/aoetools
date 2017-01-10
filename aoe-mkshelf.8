@@ -52,11 +52,11 @@ command is called again with \fIn_partitions\fP set to 1.
 .EX
 .nf
 nai:~# aoe-mkshelf /dev/etherd 7
-nai:~# ls /dev/etherd/e7.* | wc -l
+nai:~# ls /dev/etherd/e7.* | wc \-l
 160
 nai:~# rm /dev/etherd/e7.*        
 nai:~# n_partitions=1 aoe-mkshelf /dev/etherd 7
-nai:~# ls /dev/etherd/e7.* | wc -l
+nai:~# ls /dev/etherd/e7.* | wc \-l
 10
 nai:~# 
 .fi
