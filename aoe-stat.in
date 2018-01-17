@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 # aoe-stat - collate and present information about AoE storage
 # Copyright 2012, CORAID, Inc., and licensed under GPL v.2.
 
