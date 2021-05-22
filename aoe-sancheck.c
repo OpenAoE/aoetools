@@ -103,7 +103,7 @@ struct Mac {
 };
 
 enum {
-	Neth= 16,
+	Neth= 32,
 	Nstack= 16*1024,
 	Nws= 5,
 

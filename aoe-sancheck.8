@@ -53,6 +53,8 @@ If one interface for a device has a smaller MTU than the others, the AoE driver 
 This check detects the situation where a local interface is configured for jumbo frames and the AoE device is capable of jumbo frames, but some aspect of the network is incapable of passing frames that size, for example, a misconfigured switch.  \fIAoe-sancheck\fP reports the maximum payload size the path is capable of if less than the configured payload size.
 .SH BUGS
 The program may sometimes display inconsistent results between runs showing that a path is capable of a smaller frame size than it actually is.  If you see this behavior, please email one of the authors with your verbose output.
+.PP
+The program probes only the first 32 ethernet interfaces found in the system.
 .SH "SEE ALSO"
 .IR aoeping (8),
 .IR aoetools (8)
