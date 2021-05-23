@@ -103,7 +103,7 @@ struct Mac {
 };
 
 enum {
-	Neth= 16,
+	Neth= 32,
 	Nstack= 16*1024,
 	Nws= 5,
 
@@ -499,23 +499,38 @@ ethopen(Eth *e)	  // get us a raw connection to an interface
 int
 ethlist(char **ifs, int nifs)
 {
-	int i, s, n;
+	int s, n;
 	struct ifreq ifr;
+	struct if_nameindex *if_ni, *i;
 
 	s = socket(AF_INET, SOCK_STREAM, 0);
 	if (s < 0)
 		return 0;
+
+	if_ni = if_nameindex();
+	if (if_ni == NULL)
+		return 0;
+
 	n = 0;
-	for (i=0; i<nifs; i++) {
+	for (i = if_ni; ! (i->if_index == 0 && i->if_name == NULL); i++) {
 		memset(&ifr, 0, sizeof ifr);
-		ifr.ifr_ifindex = i;
-		if (ioctl(s, SIOCGIFNAME, &ifr) < 0)
+		ifr.ifr_ifindex = i->if_index;
+		strcpy(ifr.ifr_name, i->if_name);
+		// get interface flags
+		if (ioctl(s, SIOCGIFFLAGS, &ifr) < 0)
 			continue;
-		if (strncmp(ifr.ifr_name, "eth", 3))
+		// only use interfaces that use arp protocol
+		if (ifr.ifr_flags & IFF_NOARP)
 			continue;
+		// skip loopback interfaces
+		if (ifr.ifr_flags & IFF_LOOPBACK)
+			continue;
+		if (n == nifs)
+			break;
 		inserteth(ifs, nifs, ifr.ifr_name);
 		n++;
 	}
+	if_freenameindex(if_ni);
 	close(s);
 	return n;
 }
