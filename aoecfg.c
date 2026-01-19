@@ -108,7 +108,7 @@ cfgquery(int cmd, int shelf, int slot)
 	int n;
 	Aoehdr *h;
 	Conf *c;
-	uchar buf[1024 + sizeof *h];
+	uchar buf[1024 + sizeof *c];
 	u32 tag;
 
 	c = (Conf*) buf;
