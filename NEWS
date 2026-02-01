@@ -1,3 +1,6 @@
+2026-02-02 Yacine Kheddache <yacine@kheddache.me>
+	remove the OpenAOE website reference, as it no longer exists
+
 2021-05-21 Christoph Biedl <debian.axhn@manchmal.in-ulm.de>
 	document and raise the maximum number of aoe-sancheck interfaces
 
