@@ -18,7 +18,7 @@ $zero: Exiting.
 EOF
 	exit 1
 fi
-if test "`ps axwwww | grep 'udev[d]'`" || test -d "/dev/.udev"; then
+if test "`ps axwwww | grep 'udev[d]'`" || test -d "/run/udev" || test -d "/dev/.udev"; then
 	cat 1>&2 <<EOF
 $zero Error: udev detected.  You shouldn't need to use $zero.
 $zero: Please see the aoe-mkshelf manpage.

@@ -23,7 +23,7 @@ $zero: Exiting.
 EOF
 	exit 1
 fi
-if test "`ps axwwww | grep 'udev[d]'`" || test -d "/dev/.udev"; then
+if test "`ps axwwww | grep 'udev[d]'`" || test -d "/run/udev" || test -d "/dev/.udev"; then
 	cat 1>&2 <<EOF
 $zero Error: udev detected.  You shouldn't need to use $zero.
 $zero: Please see the aoe-mkdevs manpage.
@@ -56,6 +56,6 @@ export n_partitions
 mkshelf=`echo $0 | sed 's!mkdevs!mkshelf!'`
 i=0
 while test $i -lt $n_shelves; do
-	sh $mkshelf $dir $i
+	$mkshelf $dir $i
 	i=`expr $i + 1`
 done
